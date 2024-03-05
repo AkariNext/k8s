@@ -5,9 +5,9 @@ metadata:
   name: bgppeer-main
   namespace: metallb-system
 spec:
-  myASN: 65002
-  peerASN: 65001
-  peerAddress: 192.168.1.1
+  myASN: 65004
+  peerASN: 65003
+  peerAddress: 192.168.10.1
 ---
 apiVersion: metallb.io/v1beta1
 kind: BGPAdvertisement
