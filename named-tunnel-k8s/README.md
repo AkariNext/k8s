@@ -17,6 +17,12 @@
 cloudflared tunnel login
 ```
 
+## ネームスペースを作成
+
+```sh
+kubectl create namespace cloudflared
+```
+
 ## トンネルを作成します。
 
 ```sh
