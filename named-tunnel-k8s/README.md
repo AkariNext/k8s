@@ -11,6 +11,18 @@
 - https://pkg.cloudflare.com/index.html
 - https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/
 
+## ログイン
+
+```sh
+cloudflared tunnel login
+```
+
+## ネームスペースを作成
+
+```sh
+kubectl create namespace cloudflared
+```
+
 ## トンネルを作成します。
 
 ```sh
