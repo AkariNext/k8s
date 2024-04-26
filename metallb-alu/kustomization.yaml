@@ -5,4 +5,4 @@ namespace: metallb-system
 resources:
   - github.com/metallb/metallb/config/native?ref=v0.14.3
   - pool.yaml
-  - bgp.yaml
+  - l2.yaml
