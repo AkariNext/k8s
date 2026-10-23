@@ -19,6 +19,9 @@ spec:
           type: LoadBalancer
           annotations:
             metallb.io/loadBalancerIPs: 10.255.1.2
+        # k8s-cp（4GB）には置かない。child だけで 700MB ほど使い、etcd が遅くなって API サーバーが落ちた
+        child:
+          tolerations: []
   destination:
     server: https://kubernetes.default.svc
     namespace: netdata
