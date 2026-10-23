@@ -1,0 +1,19 @@
+# apps/ にある Application をまとめて作る親（app of apps）。Argo CD を入れたあとに一度だけ apply する
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/AkariNext/k8s.git
+    targetRevision: main
+    path: k8s-yupix/apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
