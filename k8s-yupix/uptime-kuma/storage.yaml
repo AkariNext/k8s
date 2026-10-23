@@ -1,0 +1,32 @@
+# 前のクラスターで NFS に作られたデータのフォルダを、そのまま使う
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: uptime-kuma-data
+spec:
+  capacity:
+    storage: 4Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  claimRef:
+    namespace: uptime-kuma
+    name: uptime-kuma-data
+  nfs:
+    server: 100.86.143.74
+    path: /mnt/nfs/general/default-my-uptime-kuma-pvc-pvc-ddcf3b4e-1951-48ac-8fb2-90fd417ee5be
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: uptime-kuma-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  volumeName: uptime-kuma-data
+  resources:
+    requests:
+      storage: 4Gi
